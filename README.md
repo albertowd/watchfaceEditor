@@ -2,7 +2,9 @@ This is forked watchfaceEditor with experimnental and really quick addition of A
 
 Also added quick electron build for convenience.
 
-If you want to quickly make yourself desktop electron app just clone this repo and 
+You can grab built version from [release](https://github.com/chm-dev/watchfaceEditor/releases/tag/GTS-electron)
+
+If you want to build  electron app yourself, just clone this repo and 
 
 ```sh
 npm run build-electron
@@ -10,6 +12,9 @@ npm run build-electron
 
 
 I really speedran this thing so expect bugs and errors. 
+
+
+-------
 
 
 # WatchfaceEditor
