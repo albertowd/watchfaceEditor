@@ -1,3 +1,17 @@
+This is forked watchfaceEditor with experimnental and really quick addition of Amazfit GTS.
+
+Also added quick electron build for convenience.
+
+If you want to quickly make yourself desktop electron app just clone this repo and 
+
+```sh
+npm run build-electron
+```
+
+
+I really speedran this thing so expect bugs and errors. 
+
+
 # WatchfaceEditor
 
 [![](https://github.com/v1ack/watchfaceEditor/raw/master/assets/icon/android-chrome-192x192.png)](https://v1ack.github.io/watchfaceEditor/ "v1ack.github.io/watchfaceEditor")
