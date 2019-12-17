@@ -14,6 +14,8 @@ npm run build-electron
 I really speedran this thing so expect bugs and errors. 
 
 
+Ps. Edit tools in single package are on the way.
+
 -------
 
 
