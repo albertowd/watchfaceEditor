@@ -8,12 +8,12 @@ function init() {
   // wfe.app.analogtabversion;
   if ('bg' in wfe.coords) {
     let bg = $c(wfe.coords.bg.Image.ImageIndex);
-    bg.style.left = wfe.coords.bg.Image.X * 3 + 'px';
-    bg.style.top = wfe.coords.bg.Image.Y * 3 + 'px';
+    bg.style.left = wfe.coords.bg.Image.X * wfe.device.editor_zoom + 'px';
+    bg.style.top = wfe.coords.bg.Image.Y * wfe.device.editor_zoom + 'px';
     bg.style.position = 'absolute';
     bg.style.zIndex = -1;
-    bg.height *= 3;
-    bg.width *= 3;
+    bg.height *= wfe.device.editor_zoom;
+    bg.width *= wfe.device.editor_zoom;
     bg.removeAttribute('id');
     bg.ondragstart = function() {
       return false;
@@ -63,21 +63,21 @@ function update(arrow) {
   if ('analog' + currentElementName in wfe.coords) {
     $('analog').innerHTML +=
       '<div class="analog-center" style="left: ' +
-      (currentElement.Center.X * 3 - 11) +
+      (currentElement.Center.X * wfe.device.editor_zoom - 11) +
       'px;top:' +
-      (currentElement.Center.Y * 3 - 11) +
+      (currentElement.Center.Y * wfe.device.editor_zoom - 11) +
       'px"></div>';
     $('analog').innerHTML +=
       '<div class="analog-line" style="left: ' +
-      (currentElement.Center.X * 3 - 3) +
+      (currentElement.Center.X * wfe.device.editor_zoom - 3) +
       'px;height:' +
-      (currentElement.Center.Y * 3 - 11) +
+      (currentElement.Center.Y * wfe.device.editor_zoom - 11) +
       'px"></div>';
     $('analog').innerHTML +=
       '<svg id="analogsvg" width="' +
-      wfe.device.width * 3 +
+      wfe.device.width * wfe.device.editor_zoom +
       '" height="' +
-      wfe.device.height * 3 +
+      wfe.device.height * wfe.device.editor_zoom +
       '"></svg>';
     for (let i in $('analog').childNodes.length) {
       $('analog').childNodes[i].oncontextmenu = event.preventDefault();
@@ -113,12 +113,12 @@ function addDot(e) {
     X:
       (Number(d.style.top.replace('px', '')) +
         3 -
-        currentElement.Center.X * 3) /
+        currentElement.Center.X * wfe.device.editor_zoom) /
       -3,
     Y:
       (Number(d.style.left.replace('px', '')) +
         3 -
-        currentElement.Center.X * 3) /
+        currentElement.Center.X * wfe.device.editor_zoom) /
       3
   };
   currentElement.Shape.push(c);
@@ -135,7 +135,7 @@ function removeDot(e) {
 
 function drawAnalog(el, value) {
   let col = el.Color.replace('0x', '#'),
-    d = 'M ' + el.Shape[0].X * 3 + ' ' + el.Shape[0].Y * 3,
+    d = 'M ' + el.Shape[0].X * wfe.device.editor_zoom + ' ' + el.Shape[0].Y * wfe.device.editor_zoom,
     iters = el.Shape.length,
     fill = el.OnlyBorder ? 'none' : col,
     contextmenu = e => {
@@ -143,30 +143,30 @@ function drawAnalog(el, value) {
       removeDot(e);
     };
   for (let i = 0; i < iters; i++) {
-    d += 'L ' + el.Shape[i].X * 3 + ' ' + el.Shape[i].Y * 3 + ' ';
+    d += 'L ' + el.Shape[i].X * wfe.device.editor_zoom + ' ' + el.Shape[i].Y * wfe.device.editor_zoom + ' ';
     let dot = document.createElement('div');
     dot.classList.add('analog-dot');
     dot.id = 'dot' + dotCount++;
-    dot.style.left = el.Shape[i].Y * 3 + el.Center.X * 3 - 4 + 'px';
-    dot.style.top = el.Shape[i].X * 3 * -1 + el.Center.Y * 3 - 4 + 'px';
+    dot.style.left = el.Shape[i].Y * wfe.device.editor_zoom + el.Center.X * wfe.device.editor_zoom - 4 + 'px';
+    dot.style.top = el.Shape[i].X * wfe.device.editor_zoom * -1 + el.Center.Y * wfe.device.editor_zoom - 4 + 'px';
     dot.oncontextmenu = contextmenu;
     moveDot(dot, currentElement.Shape[i]);
     $('analog').appendChild(dot);
   }
-  d += 'L ' + el.Shape[0].X * 3 + ' ' + el.Shape[0].Y * 3 + ' ';
+  d += 'L ' + el.Shape[0].X * wfe.device.editor_zoom + ' ' + el.Shape[0].Y * wfe.device.editor_zoom + ' ';
   $('analogsvg').innerHTML +=
     '<path d="' +
     d +
     '" transform="rotate(' +
     (value - 90) +
     ' ' +
-    el.Center.X * 3 +
+    el.Center.X * wfe.device.editor_zoom +
     ' ' +
-    el.Center.Y * 3 +
+    el.Center.Y * wfe.device.editor_zoom +
     ') translate(' +
-    el.Center.X * 3 +
+    el.Center.X * wfe.device.editor_zoom +
     ' ' +
-    el.Center.Y * 3 +
+    el.Center.Y * wfe.device.editor_zoom +
     ') " fill="' +
     fill +
     '" stroke="' +
@@ -337,23 +337,23 @@ function moveDot(el, elcoords) {
       let top = styleToNum(el.style.top),
         left = styleToNum(el.style.left);
       el.style.top =
-        top > 0 && top < wfe.device.height * 3
-          ? Math.round(top / 3) * 3 + 'px'
+        top > 0 && top < wfe.device.height * wfe.device.editor_zoom
+          ? Math.round(top / 3) * wfe.device.editor_zoom + 'px'
           : '0px';
       el.style.left =
-        left > 0 && left < wfe.device.width * 3
-          ? Math.round(left / 3) * 3 + 'px'
+        left > 0 && left < wfe.device.width * wfe.device.editor_zoom
+          ? Math.round(left / 3) * wfe.device.editor_zoom + 'px'
           : '0px';
 
       elcoords.X =
         (Number(el.style.top.replace('px', '')) +
           3 -
-          currentElement.Center.X * 3) /
+          currentElement.Center.X * wfe.device.editor_zoom) /
         -3;
       elcoords.Y =
         (Number(el.style.left.replace('px', '')) +
           3 -
-          currentElement.Center.X * 3) /
+          currentElement.Center.X * wfe.device.editor_zoom) /
         3;
       update(currentElementName);
     };

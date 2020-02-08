@@ -178,25 +178,37 @@ let wf_data = {
     ) {
       packed.AnalogDialFace = {};
       if ('analoghours_image' in obj) {
-        packed.AnalogDialFace.Hours = JSON.parse(
-          '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
-        );
-        packed.AnalogDialFace.Hours.CenterImage = obj.analoghours_image;
+        packed.AnalogDialFace.Hours = {
+          OnlyBorder: false,
+          Color: "0x00000000",
+          CenterOffset: {
+            X: 0,
+            Y: 0
+          }
+        };
+        packed.AnalogDialFace.Hours.Image = obj.analoghours_image;
       }
       if ('analogminutes_image' in obj) {
-        packed.AnalogDialFace.Minutes = JSON.parse(
-          '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
-        );
-        packed.AnalogDialFace.Minutes.CenterImage = obj.analogminutes_image;
+        packed.AnalogDialFace.Minutes = {
+          OnlyBorder: false,
+          Color: "0x00000000",
+          CenterOffset: {
+            X: 0,
+            Y: 0
+          }
+        };
+        packed.AnalogDialFace.Minutes.Image = obj.analogminutes_image;
       }
       if ('analogseconds_image' in obj) {
-        packed.AnalogDialFace.Seconds = JSON.parse(
-          '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
-        );
-        packed.AnalogDialFace.Seconds.CenterImage = obj.analogseconds_image;
+        packed.AnalogDialFace.Seconds = {
+          OnlyBorder: false,
+          Color: "0x00000000",
+          CenterOffset: {
+            X: 0,
+            Y: 0
+          }
+        };
+        packed.AnalogDialFace.Seconds.Image = obj.analogseconds_image;
       }
     }
     return packed;
@@ -206,7 +218,7 @@ let wf_data = {
 let device = {
   height: 442,
   width: 348,
-  editor_zoom: 1,
+  editor_zoom: 1.5,
   preview_zoom: 0.5,
   tabs: ['editor-tab', 'jsonEditor-tab', 'analog-watch-tab', 'resources-tab'],
   images: {
