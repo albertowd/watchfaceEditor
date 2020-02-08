@@ -5,6 +5,7 @@ function addScript(url) {
     e.type = "text/javascript";
     document.getElementsByTagName("head")[0].appendChild(e);
 }
+
 let edgeBrowser = navigator.userAgent.search(/Edge/u) > 0 || navigator.userAgent.search(/Firefox/u) > 0;
 if (edgeBrowser) {
     addScript("js/canvas-toBlob.js");
@@ -12,10 +13,10 @@ if (edgeBrowser) {
 
 let $ = el => document.getElementById(el);
 
-$('fontfile').onchange = function() {
+$('fontfile').onchange = function () {
     if (this.files.length) {
         let reader = new FileReader();
-        reader.onloadend = function() {
+        reader.onloadend = function () {
             document.getElementsByTagName("style")[1].textContent = "@font-face{font-family: 'customfont';src: url('" + reader.result + "');}";
         };
         reader.readAsDataURL(this.files[0]);
@@ -143,10 +144,10 @@ class Creator {
         this.number = Number($("imageindex").value);
         for (let el = 0; el < this.array.length; el++) {
             let canvas = $('canvas-image-' + el);
-            zip.file(this.number + '.png', canvas.toDataURL("image/png").replace(/^data:image\/[a-z]+;base64,/u, ""), {base64: true});
+            zip.file(this.number + '.png', canvas.toDataURL("image/png").replace(/^data:image\/[a-z]+;base64,/u, ""), { base64: true });
             this.number += 1;
         }
-        zip.generateAsync({type: "blob"}).
+        zip.generateAsync({ type: "blob" }).
             then(content => {
                 saveAs(content, "images.zip");
             });
@@ -170,11 +171,11 @@ class Creator {
 let creator = new Creator();
 
 let radio_button_bg = () => {
-        for (let j = 0; j < creator.radbg.length; j++)
-            if (creator.radbg[j].checked)
-                creator.bg_color = creator.radbg[j].value;
-        creator.update();
-    },
+    for (let j = 0; j < creator.radbg.length; j++)
+        if (creator.radbg[j].checked)
+            creator.bg_color = creator.radbg[j].value;
+    creator.update();
+},
     radio_button_fg = () => {
         for (let j = 0; j < creator.rad.length; j++)
             if (creator.rad[j].checked)
@@ -232,34 +233,38 @@ if (!('lang' in localStorage))
 if (localStorage.lang.indexOf("ru") >= 0) {
     changeLang('russian');
 } else
-if (localStorage.lang.indexOf("zh") >= 0) {
-    changeLang('chinese');
-} else
-if (localStorage.lang.indexOf("tr") >= 0) {
-    changeLang('turkish');
-}
+    if (localStorage.lang.indexOf("zh") >= 0) {
+        changeLang('chinese');
+    } else
+        if (localStorage.lang.indexOf("tr") >= 0) {
+            changeLang('turkish');
+        }
 if (localStorage.lang.indexOf("cs") >= 0) {
     changeLang('czech');
 }
-$('lang-ru').addEventListener('click', () => {
-    localStorage.lang = 'ru';
-    changeLang('russian');
+$('lang-cs').addEventListener('click', () => {
+    localStorage.lang = 'cs';
+    changeLang('czech');
 });
 $('lang-en').addEventListener('click', () => {
     localStorage.lang = 'en';
     changeLang('english');
 });
-$('lang-zh').addEventListener('click', () => {
-    localStorage.lang = 'zh';
-    changeLang('chinese');
+$('lang-pt').addEventListener('click', () => {
+    localStorage.lang = 'pt';
+    changeLang('portuguese');
+});
+$('lang-ru').addEventListener('click', () => {
+    localStorage.lang = 'ru';
+    changeLang('russian');
 });
 $('lang-tr').addEventListener('click', () => {
     localStorage.lang = 'tr';
     changeLang('turkish');
 });
-$('lang-cs').addEventListener('click', () => {
-    localStorage.lang = 'cs';
-    changeLang('czech');
+$('lang-zh').addEventListener('click', () => {
+    localStorage.lang = 'zh';
+    changeLang('chinese');
 });
 
 $('textsize').addEventListener('change', creator.update.bind(creator));
@@ -273,14 +278,13 @@ $('download').addEventListener('click', creator.save.bind(creator));
 function install_metric(alt = false) {
     let link = alt ? 'https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js' : 'https://mc.yandex.ru/metrika/tag.js';
 
-    (function(m, e, t, r, i, k, a) {
-        m[i] = m[i] || function() {
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
             (m[i].a = m[i].a || []).push(arguments)
         };
         m[i].l = 1 * new Date();
         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })
-    (window, document, "script", link, "ym");
+    })(window, document, "script", link, "ym");
 
     ym(46845507, "init", {
         clickmap: true,
@@ -292,7 +296,7 @@ function install_metric(alt = false) {
 
 (() => {
     install_metric();
-    setTimeout(function() {
+    setTimeout(function () {
         if (typeof Ya === 'undefined')
             install_metric(true);
     }, 10000);

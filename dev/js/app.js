@@ -1,24 +1,26 @@
-import {$} from './utils.js';
+import { $ } from './utils.js';
 import devices from './devices/devices_list';
 import wfe from './wfe_obj.js';
 
-import russian from '../translation/russian.json';
 import chinese from '../translation/chinese.json';
+import czech from '../translation/czech.json';
 import dutch from '../translation/dutch.json';
 import english from '../translation/english.json';
 import german from '../translation/german.json';
+import portuguese from '../translation/portuguese.json';
 import turkish from '../translation/turkish.json';
-import czech from '../translation/czech.json';
+import russian from '../translation/russian.json';
 
 import renderForm from './preview_data.jsx';
 
 let languages = {
-    russian: russian,
     chinese: chinese,
+    czech: czech,
     dutch: dutch,
     german: german,
+    portuguese: portuguese,
     turkish: turkish,
-    czech: czech
+    russian: russian
 };
 for (let i in languages)
     Reflect.setPrototypeOf(languages[i], english);
@@ -107,82 +109,83 @@ function changeTheme(theme) {
         $('menu-amazfit').setAttribute('hidden', '');
         $('tablist-amazfit').setAttribute('hidden', '');
         $('tablist').removeAttribute('hidden');
-        $('donate-link').removeAttribute('hidden');
         $('theme-settings').removeAttribute('hidden');
     }
     switch (theme) {
-    case 'light':
-        localStorage.appTheme = 'light';
-        document.body.classList.remove('uk-light');
-        $('<html')[0].classList.remove('uk-background-secondary');
-        $('vars').classList.remove('uk-card-secondary');
-        $('modal-howto').childNodes[1].classList.remove('uk-background-secondary');
-        $('modal-about').childNodes[1].classList.remove('uk-background-secondary');
-        $('modal-donate').childNodes[1].classList.remove('uk-background-secondary');
-        $('jsonerrormodal').childNodes[1].classList.remove('uk-background-secondary');
-        $('modal-preview').childNodes[1].classList.remove('uk-background-secondary');
-        $('modal-settings').childNodes[1].classList.remove('uk-background-secondary');
-        break;
-    case 'dark':
-        localStorage.appTheme = 'dark';
-        document.body.classList.add('uk-light');
-        $('<html')[0].classList.add('uk-background-secondary');
-        $('vars').classList.add('uk-card-secondary');
-        $('modal-howto').childNodes[1].classList.add('uk-background-secondary');
-        $('modal-about').childNodes[1].classList.add('uk-background-secondary');
-        $('modal-donate').childNodes[1].classList.add('uk-background-secondary');
-        $('jsonerrormodal').childNodes[1].classList.add('uk-background-secondary');
-        $('modal-preview').childNodes[1].classList.add('uk-background-secondary');
-        $('modal-settings').childNodes[1].classList.add('uk-background-secondary');
-        break;
-    case 'amazfit':
-        changeTheme('dark');
-        $('.uk-navbar-left')[0].innerHTML = '<a class="uk-navbar-item uk-logo we-white" href="https://amazfitwatchfaces.com/"><img src="assets/logo.png" style="width: 200px; image-rendering: auto;"></a>';
-        localStorage.appTheme = 'amazfit';
-        $('<html')[0].style.background = '#121314';
-        $('.uk-navbar')[0].style.height = '50px';
-        $('.uk-navbar')[0].classList.remove('we-white');
-        $('.uk-navbar')[0].classList.add('amazfit');
-        $('.uk-navbar-container')[0].style.background = '#222';
-        $('menu-amazfit').removeAttribute('hidden');
-        $('tablist-amazfit').removeAttribute('hidden');
-        $('tablist').setAttribute('hidden', '');
-        $('donate-link').setAttribute('hidden', '');
-        $('theme-settings').setAttribute('hidden', '');
-        break;
-    default:
-        changeTheme('light');
+        case 'light':
+            localStorage.appTheme = 'light';
+            document.body.classList.remove('uk-light');
+            $('<html')[0].classList.remove('uk-background-secondary');
+            $('vars').classList.remove('uk-card-secondary');
+            $('modal-howto').childNodes[1].classList.remove('uk-background-secondary');
+            $('modal-about').childNodes[1].classList.remove('uk-background-secondary');
+            $('jsonerrormodal').childNodes[1].classList.remove('uk-background-secondary');
+            $('modal-preview').childNodes[1].classList.remove('uk-background-secondary');
+            $('modal-settings').childNodes[1].classList.remove('uk-background-secondary');
+            break;
+        case 'dark':
+            localStorage.appTheme = 'dark';
+            document.body.classList.add('uk-light');
+            $('<html')[0].classList.add('uk-background-secondary');
+            $('vars').classList.add('uk-card-secondary');
+            $('modal-howto').childNodes[1].classList.add('uk-background-secondary');
+            $('modal-about').childNodes[1].classList.add('uk-background-secondary');
+            $('jsonerrormodal').childNodes[1].classList.add('uk-background-secondary');
+            $('modal-preview').childNodes[1].classList.add('uk-background-secondary');
+            $('modal-settings').childNodes[1].classList.add('uk-background-secondary');
+            break;
+        case 'amazfit':
+            changeTheme('dark');
+            $('.uk-navbar-left')[0].innerHTML = '<a class="uk-navbar-item uk-logo we-white" href="https://amazfitwatchfaces.com/"><img src="assets/logo.png" style="width: 200px; image-rendering: auto;"></a>';
+            localStorage.appTheme = 'amazfit';
+            $('<html')[0].style.background = '#121314';
+            $('.uk-navbar')[0].style.height = '50px';
+            $('.uk-navbar')[0].classList.remove('we-white');
+            $('.uk-navbar')[0].classList.add('amazfit');
+            $('.uk-navbar-container')[0].style.background = '#222';
+            $('menu-amazfit').removeAttribute('hidden');
+            $('tablist-amazfit').removeAttribute('hidden');
+            $('tablist').setAttribute('hidden', '');
+            $('theme-settings').setAttribute('hidden', '');
+            break;
+        default:
+            changeTheme('light');
     }
 }
 
-$('lang-ru').addEventListener('click', () => {
-    localStorage.lang = 'ru';
-    changeLang('russian');
-});
-$('lang-en').addEventListener('click', () => {
-    localStorage.lang = 'en';
-    changeLang('english');
-});
-$('lang-zh').addEventListener('click', () => {
-    localStorage.lang = 'zh';
-    changeLang('chinese');
+$('lang-cs').addEventListener('click', () => {
+    localStorage.lang = 'cs';
+    changeLang('czech');
 });
 $('lang-de').addEventListener('click', () => {
     localStorage.lang = 'de';
     changeLang('german');
 });
+$('lang-en').addEventListener('click', () => {
+    localStorage.lang = 'en';
+    changeLang('english');
+});
 $('lang-nl').addEventListener('click', () => {
     localStorage.lang = 'nl';
     changeLang('dutch');
+});
+$('lang-pt').addEventListener('click', () => {
+    localStorage.lang = 'pt';
+    changeLang('portuguese');
+});
+$('lang-ru').addEventListener('click', () => {
+    localStorage.lang = 'ru';
+    changeLang('russian');
 });
 $('lang-tr').addEventListener('click', () => {
     localStorage.lang = 'tr';
     changeLang('turkish');
 });
-$('lang-cs').addEventListener('click', () => {
-    localStorage.lang = 'cs';
-    changeLang('czech');
+$('lang-zh').addEventListener('click', () => {
+    localStorage.lang = 'zh';
+    changeLang('chinese');
 });
+
 $('theme-light').addEventListener('click', () => changeTheme('light'));
 $('theme-dark').addEventListener('click', () => changeTheme('dark'));
 

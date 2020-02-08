@@ -1,7 +1,8 @@
 function showUntanslated() {
-    var json = {};
-    var strings = document.querySelectorAll('[data-translate-id]');
-    for (var i = 0; i < strings.length; i++) {
+    const strings = document.querySelectorAll('[data-translate-id]');
+    let json = {};
+    
+    for (let i = 0; i < strings.length; i++) {
         //json[strings[i].dataset.translateId] = strings[i].innerHTML;
         if (!(strings[i].dataset.translateId in data.app.lang))
             json[strings[i].dataset.translateId] = strings[i].innerHTML;
@@ -11,14 +12,18 @@ function showUntanslated() {
     }
     return JSON.stringify(json);
 }
+
 //setTimeout(function () {
 //    wfe.load.allinone();
 //}, 300);
+
 function showTranslation() {
-    var json = {};
     var strings = document.querySelectorAll('[data-translate-id]');
-    for (var i = 0; i < strings.length; i++) {
+    let json = {};
+
+    for (let i = 0; i < strings.length; i++) {
         json[strings[i].dataset.translateId] = strings[i].innerHTML;
     }
+
     console.log(JSON.stringify(json));
 }

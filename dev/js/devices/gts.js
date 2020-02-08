@@ -17,7 +17,7 @@ const warning = () => {
 };
 
 let wf_data = {
-  import: function(json) {
+  import: function (json) {
     warning();
     let data = {};
     if ('Background' in json) data.bg = json.Background;
@@ -106,7 +106,7 @@ let wf_data = {
     }
     return data;
   },
-  export: function(data) {
+  export: function (data) {
     let obj = JSON.parse(JSON.stringify(data));
     let packed = {};
     if ('bg' in obj) packed.Background = obj.bg;
@@ -180,21 +180,21 @@ let wf_data = {
       if ('analoghours_image' in obj) {
         packed.AnalogDialFace.Hours = JSON.parse(
           '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-            'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
+          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
         );
         packed.AnalogDialFace.Hours.CenterImage = obj.analoghours_image;
       }
       if ('analogminutes_image' in obj) {
         packed.AnalogDialFace.Minutes = JSON.parse(
           '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-            'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
+          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
         );
         packed.AnalogDialFace.Minutes.CenterImage = obj.analogminutes_image;
       }
       if ('analogseconds_image' in obj) {
         packed.AnalogDialFace.Seconds = JSON.parse(
           '{"unknown1":0,"unknown2":0,"unknown3":{"X":0,"Y":0},"unknown4":{"X":0,"Y":0},"' +
-            'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
+          'CenterImage":{"X":38,"Y":227,"ImageIndex":42}}'
         );
         packed.AnalogDialFace.Seconds.CenterImage = obj.analogseconds_image;
       }
@@ -221,11 +221,12 @@ let device = {
   data: wf_data,
   default_coords: JSON.parse(
     '{"bg":{"Image":{"ImageIndex":303,"X":0,"Y":0}},"time":{"Hours":{"Ones":{"Image' +
-      'Index":255,"ImagesCount":10,"X":186,"Y":194},"Tens":{"ImageIndex":255,"ImagesC' +
-      'ount":10,"X":148,"Y":194}},"Minutes":{"Ones":{"ImageIndex":255,"ImagesCount":1' +
-      '0,"X":275,"Y":194},"Tens":{"ImageIndex":255,"ImagesCount":10,"X":238,"Y":194}}' +
-      '},"date":false,"battery":false,"status":false,"activity":false,"weather":false' +
-      ',"stepsprogress":false,"analog":false}'
+    'Index":255,"ImagesCount":10,"X":186,"Y":194},"Tens":{"ImageIndex":255,"ImagesC' +
+    'ount":10,"X":148,"Y":194}},"Minutes":{"Ones":{"ImageIndex":255,"ImagesCount":1' +
+    '0,"X":275,"Y":194},"Tens":{"ImageIndex":255,"ImagesCount":10,"X":238,"Y":194}}' +
+    '},"date":false,"battery":false,"status":false,"activity":false,"weather":false' +
+    ',"stepsprogress":false,"analog":false}'
   )
 };
+
 export default device;

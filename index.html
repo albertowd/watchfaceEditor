@@ -6,7 +6,7 @@
     <meta name="description" content="Watchface editor for Amazfit Bip">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Language" content="en, ru, zh">
+    <meta http-equiv="Content-Language" content="en, pt, ru, zh">
     <meta name="author" content="vlack">
     <meta name="keywords" content="Amazfit, watchface, editor, edit, view, design, watch face, bip, cor, xiaomi" />
     <link href="assets/uikit/uikit.min.css" rel="stylesheet">
@@ -26,7 +26,8 @@
     <meta property="og:title" content="Watchface editor">
     <meta property="og:description" content="Watchface editor for Amazfit Bip">
     <meta property="og:url" content="https://v1ack.github.io/watchfaceEditor/">
-    <meta name="yandex-tableau-widget" content="logo=https://v1ack.github.io/watchfaceEditor/assets/ya-img.png, color=#28a5f5" />
+    <meta name="yandex-tableau-widget"
+        content="logo=https://v1ack.github.io/watchfaceEditor/assets/ya-img.png, color=#28a5f5" />
 </head>
 
 <body>
@@ -52,15 +53,18 @@
             <div class="uk-container uk-container-expand">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo we-white" href="https://v1ack.github.io/watchfaceEditor/"><img src="assets/icon/android-chrome-192x192.png" style="width: auto; height: 60px; margin-right: 10px;">Watchface Editor</a>
+                        <a class="uk-navbar-item uk-logo we-white" href="https://v1ack.github.io/watchfaceEditor/"><img
+                                src="assets/icon/android-chrome-192x192.png"
+                                style="width: auto; height: 60px; margin-right: 10px;">Watchface Editor</a>
                     </div>
                     <div class="uk-navbar-left" id="tablist" style="margin-left: 15px">
                         <ul class="uk-navbar-nav we-white">
                             <a class="uk-navbar-item" href="#modal-howto" uk-toggle data-translate-id="help">Help</a>
-                            <a class="uk-navbar-item" href="#modal-donate" uk-toggle data-translate-id="donate">Donate</a>
-                            <a class="uk-navbar-item" href="#modal-settings" uk-toggle data-translate-id="settings">Settings</a>
+                            <a class="uk-navbar-item" href="#modal-settings" uk-toggle
+                                data-translate-id="settings">Settings</a>
                             <a class="uk-navbar-item" href="#modal-about" uk-toggle data-translate-id="about">About</a>
-                            <a class="uk-navbar-item" href="https://v1ack.github.io/watchfaceEditor/imagecreator.html" target="_blank" data-translate-id="imagecreator">Image creator</a>
+                            <a class="uk-navbar-item" href="https://v1ack.github.io/watchfaceEditor/imagecreator.html"
+                                target="_blank" data-translate-id="imagecreator">Image creator</a>
                         </ul>
                     </div>
                     <div class="uk-navbar-right">
@@ -71,9 +75,12 @@
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li id="device_bip"><a href="#">Amazfit Bip</a></li>
                                         <li id="device_cor"><a href="#">Amazfit Cor</a></li>
-                                        <li id="device_band4"><a href="#">Mi Band 4 <span class="uk-badge" style="zoom: .7; vertical-align: super;">Beta</span></a></li>
-                                        <li id="device_gtr"><a href="#">Amazfit GTR <span class="uk-badge" style="zoom: .7; vertical-align: super;">Beta</span></a></li>
-                                        <li id="device_gts"><a href="#">Amazfit GTS <span class="uk-badge" style="zoom: .7; vertical-align: super;">Beta</span></a></li>
+                                        <li id="device_band4"><a href="#">Mi Band 4 <span class="uk-badge"
+                                                    style="zoom: .7; vertical-align: super;">Beta</span></a></li>
+                                        <li id="device_gtr"><a href="#">Amazfit GTR <span class="uk-badge"
+                                                    style="zoom: .7; vertical-align: super;">Beta</span></a></li>
+                                        <li id="device_gts"><a href="#">Amazfit GTS <span class="uk-badge"
+                                                    style="zoom: .7; vertical-align: super;">Beta</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -91,31 +98,45 @@
                 </div>
             </div>
             <div id="inputblock" class="uk-width-expand uk-padding" style="padding-top: 0; padding-bottom: 10px;">
-                <ul class="uk-tab" uk-switcher="connect: .switcher-container; swiping: false; animation: uk-animation-fade" style="margin-top: 0">
+                <ul class="uk-tab"
+                    uk-switcher="connect: .switcher-container; swiping: false; animation: uk-animation-fade"
+                    style="margin-top: 0">
                     <li><a href="#" data-translate-id="view">View</a></li>
-                    <li id="editor-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="design">Design</a></li>
-                    <li id="jsonEditor-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="edit">Edit</a></li>
-                    <li id="analog-watch-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="analog">Analog</a></li>
-                    <li id="resources-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="resources">Resources</a></li>
+                    <li id="editor-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="design">Design</a>
+                    </li>
+                    <li id="jsonEditor-tab" class="uk-disabled main-tab"><a href="#" data-translate-id="edit">Edit</a>
+                    </li>
+                    <li id="analog-watch-tab" class="uk-disabled main-tab"><a href="#"
+                            data-translate-id="analog">Analog</a></li>
+                    <li id="resources-tab" class="uk-disabled main-tab"><a href="#"
+                            data-translate-id="resources">Resources</a></li>
                 </ul>
                 <ul class="uk-switcher switcher-container uk-margin">
                     <li>
                         <div class="js-upload" uk-form-custom>
                             <span data-translate-id="images">Images: </span>
                             <input id="inputimages" type="file" multiple accept=".png">
-                            <button class="uk-button uk-button-default uk-button-small" type="button" tabindex="-1" data-translate-id="select">Select</button>
+                            <button class="uk-button uk-button-default uk-button-small" type="button" tabindex="-1"
+                                data-translate-id="select">Select</button>
                         </div>
                         <br>
                         <div class="js-upload uk-margin" uk-form-custom>
                             <span>JSON: </span>
                             <input id="inputjs" type="file" accept=".json">
-                            <button class="uk-button uk-button-default uk-button-small" type="button" tabindex="-1" data-translate-id="select">Select</button>
+                            <button class="uk-button uk-button-default uk-button-small" type="button" tabindex="-1"
+                                data-translate-id="select">Select</button>
                         </div>
                         <br>
-                        <button id="viewsettings" class="uk-button uk-button-default" type="button" uk-toggle="target: #vars; animation: uk-animation-fade" disabled data-translate-id="settings">Settings</button>
-                        <button id="real_size_preview_button" class="uk-button uk-button-default" type="button" uk-toggle="target: #modal-preview" data-translate-id="realsizePreview">Real-size preview</button>
-                        <button id="makepng" class="uk-button uk-button-default" disabled data-translate-id="makepng">Make PNG</button>
-                        <label><input id="makepngwithwatch" class="uk-checkbox" type="checkbox"> <span data-translate-id="withwatch">With watch</span></label>
+                        <button id="viewsettings" class="uk-button uk-button-default" type="button"
+                            uk-toggle="target: #vars; animation: uk-animation-fade" disabled
+                            data-translate-id="settings">Settings</button>
+                        <button id="real_size_preview_button" class="uk-button uk-button-default" type="button"
+                            uk-toggle="target: #modal-preview" data-translate-id="realsizePreview">Real-size
+                            preview</button>
+                        <button id="makepng" class="uk-button uk-button-default" disabled
+                            data-translate-id="makepng">Make PNG</button>
+                        <label><input id="makepngwithwatch" class="uk-checkbox" type="checkbox"> <span
+                                data-translate-id="withwatch">With watch</span></label>
                         <div id="vars" hidden class="uk-margin-top uk-card uk-card-default uk-card-body">
                             <h3 class="uk-card-title" data-translate-id="settings">Settings</h3>
                             <form class="uk-grid-small" uk-grid id="form-react">
@@ -126,16 +147,24 @@
                     <li class="uk-grid uk-grid-collapse">
                         <div id="editor" class="uk-card-default uk-box-shadow-large"></div>
                         <div style="width: 250px">
-                            <p id="e_coords" class="uk-placeholder uk-text-center" data-translate-id="coordinates">Coordinates</p>
+                            <p id="e_coords" class="uk-placeholder uk-text-center" data-translate-id="coordinates">
+                                Coordinates</p>
                             <div class="uk-inline">
-                                <button id="fix-coords" class="uk-button uk-button-primary uk-button-small editorbutton" data-translate-id="fixcoords" type="button" style="width: 190px">Fix coordinates</button>
-                                <button class="uk-button uk-button-primary uk-button-small editorbutton" type="button" style="width: 40px; margin-left: -5px">&#63;</button>
+                                <button id="fix-coords" class="uk-button uk-button-primary uk-button-small editorbutton"
+                                    data-translate-id="fixcoords" type="button" style="width: 190px">Fix
+                                    coordinates</button>
+                                <button class="uk-button uk-button-primary uk-button-small editorbutton" type="button"
+                                    style="width: 40px; margin-left: -5px">&#63;</button>
                                 <div uk-drop="delay-show: 0; delay-hide:0; mode: click">
-                                    <div class="uk-card uk-card-body uk-card-default uk-card-small" data-translate-id="fixcoordsTip">It sets coordinates for bottom right based on height of highest element and width of widest</div>
+                                    <div class="uk-card uk-card-body uk-card-default uk-card-small"
+                                        data-translate-id="fixcoordsTip">It sets coordinates for bottom right based on
+                                        height of highest element and width of widest</div>
                                 </div>
                             </div>
-                            <button class="uk-button uk-button-primary uk-button-small editorbutton" id="editor-export" data-translate-id="exportJson">Export JSON</button>
-                            <button id="editor-undo" class="uk-button uk-button-primary uk-button-small editorbutton" data-translate-id="undo">Undo</button>
+                            <button class="uk-button uk-button-primary uk-button-small editorbutton" id="editor-export"
+                                data-translate-id="exportJson">Export JSON</button>
+                            <button id="editor-undo" class="uk-button uk-button-primary uk-button-small editorbutton"
+                                data-translate-id="undo">Undo</button>
                         </div>
                     </li>
                     <li>
@@ -145,69 +174,120 @@
                                 <li class="uk-open">
                                     <a href="#" class="uk-accordion-title" data-translate-id="time">Time</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tg12/24" id="tg-amPm">Toggle 12/24h</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgsec" id="tg-seconds">Toggle seconds</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tg12/24" id="tg-amPm">Toggle 12/24h</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgsec" id="tg-seconds">Toggle seconds</button>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" class="uk-accordion-title" data-translate-id="date">Date</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweekday" id="tg-dateWeekday">Toggle week day</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgdateoneline" id="tg-dateOneLine">Toggle date oneline</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgdateday" id="tg-dateDay">Toggle day</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgdatemonth" id="tg-dateMonth">Toggle month</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweekday" id="tg-dateWeekday">Toggle week day</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgdateoneline" id="tg-dateOneLine">Toggle date
+                                            oneline</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgdateday" id="tg-dateDay">Toggle day</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgdatemonth" id="tg-dateMonth">Toggle month</button>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" class="uk-accordion-title" data-translate-id="activity">Activity</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactsteps" id="tg-actSteps">Toggle steps</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactstepsgoal" id="tg-actStepsGoal">Toggle steps goal</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstepslinear" id="tg-stepsLinear">Toggle steps progress</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstepslinear" id="tg-stepscircle">Toggle steps progress circle</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactgoalicon" id="tg-stepsGoal">Toggle steps goal icon</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactpulse" id="tg-actPulse">Toggle pulse</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactcalories" id="tg-actCalories">Toggle calories</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgactdist" id="tg-actDistance">Toggle distance</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactsteps" id="tg-actSteps">Toggle steps</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactstepsgoal" id="tg-actStepsGoal">Toggle steps
+                                            goal</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstepslinear" id="tg-stepsLinear">Toggle steps
+                                            progress</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstepscircle" id="tg-stepscircle">Toggle steps progress
+                                            circle</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactgoalicon" id="tg-stepsGoal">Toggle steps goal
+                                            icon</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactpulse" id="tg-actPulse">Toggle pulse</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactcalories" id="tg-actCalories">Toggle
+                                            calories</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgactdist" id="tg-actDistance">Toggle distance</button>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" class="uk-accordion-title" data-translate-id="status">Status</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstatalarm" id="tg-statAlarm">Toggle alarm</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstatbt" id="tg-statBluetooth">Toggle bluetooth</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstatlock" id="tg-statLock">Toggle lock</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgstatdnd" id="tg-statDnd">Toggle do not disturb</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstatalarm" id="tg-statAlarm">Toggle alarm</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstatbt" id="tg-statBluetooth">Toggle bluetooth</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstatlock" id="tg-statLock">Toggle lock</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgstatdnd" id="tg-statDnd">Toggle do not disturb</button>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" class="uk-accordion-title" data-translate-id="battery">Battery</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgbaticon" id="tg-batteryIcon">Toggle icon</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgbatnum" id="tg-batteryText">Toggle number</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgbatscale" id="tg-batteryScale">Toggle battery bar</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgbaticon" id="tg-batteryIcon">Toggle icon</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgbatnum" id="tg-batteryText">Toggle number</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgbatscale" id="tg-batteryScale">Toggle battery
+                                            bar</button>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" class="uk-accordion-title" data-translate-id="weather">Weather</a>
                                     <div class="uk-accordion-content">
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweathericon" id="tg-weatherIcon">Toggle icon</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweathercusticon" id="tg-weatherIconCustom">Toggle custom icon</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatheroneline" id="tg-weatherOneLine">Toggle weather oneline</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweathercur" id="tg-weatherCurrent">Toggle current weather</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatherday" id="tg-weatherDay">Toggle day weather</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweathernight" id="tg-weatherNight">Toggle night weather</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatherDayAlt" id="tg-weatherDayAlt">Toggle alt day weather</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatherNightAlt" id="tg-weatherNightAlt">Toggle alt night weather</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatherair" id="tg-weatherAirIcon">Toggle air polution icon</button>
-                                        <button class="uk-button uk-button-primary uk-button-small editor-button" data-translate-id="tgweatherAirIndex" id="tg-weatherAirText">Toggle air polution</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweathericon" id="tg-weatherIcon">Toggle icon</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweathercusticon" id="tg-weatherIconCustom">Toggle
+                                            custom icon</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatheroneline" id="tg-weatherOneLine">Toggle weather
+                                            oneline</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweathercur" id="tg-weatherCurrent">Toggle current
+                                            weather</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatherday" id="tg-weatherDay">Toggle day
+                                            weather</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweathernight" id="tg-weatherNight">Toggle night
+                                            weather</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatherDayAlt" id="tg-weatherDayAlt">Toggle alt day
+                                            weather</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatherNightAlt" id="tg-weatherNightAlt">Toggle alt
+                                            night weather</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatherair" id="tg-weatherAirIcon">Toggle air polution
+                                            icon</button>
+                                        <button class="uk-button uk-button-primary uk-button-small editor-button"
+                                            data-translate-id="tgweatherAirIndex" id="tg-weatherAirText">Toggle air
+                                            polution</button>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <button class="uk-button uk-button-primary uk-margin-top" id="jsoneditor-undo" data-translate-id="undo">Undo</button>
-                        <button class="uk-button uk-button-primary uk-margin-top" id="jsoneditor-export" data-translate-id="exportJson">Export JSON</button>
-                        <a href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages" class="uk-button uk-button-default uk-margin-top" target="_blank" id="defaultimages" data-translate-id="defaultimages">Default images</a>
+                        <button class="uk-button uk-button-primary uk-margin-top" id="jsoneditor-undo"
+                            data-translate-id="undo">Undo</button>
+                        <button class="uk-button uk-button-primary uk-margin-top" id="jsoneditor-export"
+                            data-translate-id="exportJson">Export JSON</button>
+                        <a href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages"
+                            class="uk-button uk-button-default uk-margin-top" target="_blank" id="defaultimages"
+                            data-translate-id="defaultimages">Default images</a>
                     </li>
                     <li class="uk-grid uk-grid-collapse">
                         <div class="analog-block">
@@ -217,14 +297,17 @@
                         <div class="uk-width-expand" style="margin-left: 15px; min-width: 200px;">
                             <div class="uk-alert-primary" uk-alert id="analogDescription">
                                 <a class="uk-alert-close" uk-close></a>
-                                <p data-translate-id="analogDescription">Click to add a dot, right click to remove, drag to move. Max 12 dots for each arrow</p>
+                                <p data-translate-id="analogDescription">Click to add a dot, right click to remove, drag
+                                    to move. Max 12 dots for each arrow</p>
                             </div>
                             <ul class="uk-child-width-expand" uk-tab id="analog-tab">
-                                <li class="uk-active"><a href="#" id="analog-hours" data-translate-id="hours">Hours</a></li>
+                                <li class="uk-active"><a href="#" id="analog-hours" data-translate-id="hours">Hours</a>
+                                </li>
                                 <li><a href="#" id="analog-minutes" data-translate-id="minutes">Minutes</a></li>
                                 <li><a href="#" id="analog-seconds" data-translate-id="seconds">Seconds</a></li>
                             </ul>
-                            <button class="uk-button uk-button-primary uk-button-small" data-translate-id="tg" id="analog-toggle" style="width: 100%">Toggle</button>
+                            <button class="uk-button uk-button-primary uk-button-small" data-translate-id="tg"
+                                id="analog-toggle" style="width: 100%">Toggle</button>
                             <form class="uk-form-stacked uk-margin-top">
 
                                 <div class="uk-margin">
@@ -240,7 +323,8 @@
                                 </div>
 
                                 <div class="uk-margin">
-                                    <label class="uk-form-label" for="analog-color" data-translate-id="color">Color</label>
+                                    <label class="uk-form-label" for="analog-color"
+                                        data-translate-id="color">Color</label>
                                     <div class="uk-form-controls">
                                         <select class="uk-select" id="analog-color">
                                             <option style="background: #000000" value="0x000000">Black</option>
@@ -257,7 +341,8 @@
 
                                 <div class="uk-margin">
                                     <div class="uk-form-controls">
-                                        <label><input class="uk-checkbox" type="checkbox" id="analog-fill"> <span data-translate-id="analogFill">Fill</span></label>
+                                        <label><input class="uk-checkbox" type="checkbox" id="analog-fill"> <span
+                                                data-translate-id="analogFill">Fill</span></label>
                                     </div>
                                 </div>
 
@@ -276,7 +361,12 @@
                                 <a class="uk-accordion-title" href="#" data-translate-id="defaultimages">Default</a>
                                 <div class="uk-accordion-content">
                                     <div id="imagesavalible"></div>
-                                    <p data-translate-id="defaultimagesTip" data-link="href='https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages' target='_blank'">You can <a href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages" target="_blank">download default images</a> or just drag them from this site to your folder</p>
+                                    <p data-translate-id="defaultimagesTip"
+                                        data-link="href='https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages' target='_blank'">
+                                        You can <a
+                                            href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages"
+                                            target="_blank">download default images</a> or just drag them from this site
+                                        to your folder</p>
                                 </div>
                             </li>
                         </ul>
@@ -293,15 +383,27 @@
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title" data-translate-id="help">Help</h2>
                 <h3 data-translate-id="howtouse">How to use</h3>
-                <p data-link="href='https://bitbucket.org/valeronm/amazfitbiptools/downloads/' target='_blank'" data-translate-id="howtouseDescr">Disassemble <b>.bin</b> file with <a href="https://bitbucket.org/valeronm/amazfitbiptools/downloads/" target="_blank">AmazfitBipTools</a> (<a href="https://bitbucket.org/valeronm/amazfitbiptools/downloads/" target="_blank">AmazfitCorTools</a>                    for Cor), click on <b>Select images</b> and select them from watchface folder by <b>Ctrl+A</b>, then select JSON file by clicking on <b>JSON Select</b>. After that you can set numbers to display by clicking <b>Settings</b> or edit
+                <p data-link="href='https://bitbucket.org/valeronm/amazfitbiptools/downloads/' target='_blank'"
+                    data-translate-id="howtouseDescr">Disassemble <b>.bin</b> file with <a
+                        href="https://bitbucket.org/valeronm/amazfitbiptools/downloads/"
+                        target="_blank">AmazfitBipTools</a> (<a
+                        href="https://bitbucket.org/valeronm/amazfitbiptools/downloads/"
+                        target="_blank">AmazfitCorTools</a> for Cor), click on <b>Select images</b> and select them from
+                    watchface folder by <b>Ctrl+A</b>, then select JSON file by clicking on <b>JSON Select</b>. After
+                    that you can set numbers to display by clicking <b>Settings</b> or edit
                     the watchface
                     <br><br>You can edit elements location on tab <b>Design</b>
                 </p>
-                <p data-link="href='https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages' target='_blank'" data-translate-id="howtouseDescr2">Also you can edit JSON on tab <b>Edit</b>. To update preview just click out of JSON input. If you add smth by choosing it, it will use default image. You can change it to yours or download default images <a href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages"
+                <p data-link="href='https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages' target='_blank'"
+                    data-translate-id="howtouseDescr2">Also you can edit JSON on tab <b>Edit</b>. To update preview just
+                    click out of JSON input. If you add smth by choosing it, it will use default image. You can change
+                    it to yours or download default images <a
+                        href="https://github.com/v1ack/watchfaceEditor/tree/master/defaultimages"
                         target="_blank">here</a>
                 </p>
                 <p>
-                    <a href="https://4pda.ru/forum/index.php?s=&showtopic=876302&view=findpost&p=68418440" target="_blank">Инструкция на русском языке</a>
+                    <a href="https://4pda.ru/forum/index.php?s=&showtopic=876302&view=findpost&p=68418440"
+                        target="_blank">Инструкция на русском языке</a>
                 </p>
                 <h3 data-translate-id="avaliblecolors">Available colors on bip</h3>
                 <p>
@@ -430,7 +532,8 @@
                     </tbody>
                 </table>
                 <p class="uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button" data-translate-id="close">Close</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button"
+                        data-translate-id="close">Close</button>
                 </p>
             </div>
         </div>
@@ -438,16 +541,21 @@
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title" data-translate-id="about">About</h2>
                 <p id="siteopened">You opened this site $times times</p>
-                
+
                 <h3>Thanks to</h3>
-                <p>Valeriy Mironov for <a href="https://bitbucket.org/valeronm/amazfitbiptools/" target="_blank">AmazfitBipTools</a><br> MaxL for <a href="https://4pda.ru/forum/index.php?s=&showtopic=845160&view=findpost&p=68065502" target="_blank">weather icons</a><br>                    Osmat for <a href="https://amazfitwatchfaces.com" target="_blank">amazfitwatchfaces.com</a><br> Showman for advices
+                <p>Valeriy Mironov for <a href="https://bitbucket.org/valeronm/amazfitbiptools/"
+                        target="_blank">AmazfitBipTools</a><br> MaxL for <a
+                        href="https://4pda.ru/forum/index.php?s=&showtopic=845160&view=findpost&p=68065502"
+                        target="_blank">weather icons</a><br> Osmat for <a href="https://amazfitwatchfaces.com"
+                        target="_blank">amazfitwatchfaces.com</a><br> Showman for advices
                 </p>
                 <h3>Used libraries</h3>
                 <p><a href="https://getuikit.com/" target="_blank">UI kit</a><br>
                     <a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a><br>
                     <a href="https://jsonlint.com/" target="_blank">JSONLint</a></p>
                 <p class="uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button" data-translate-id="close">Close</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button"
+                        data-translate-id="close">Close</button>
                 </p>
             </div>
         </div>
@@ -462,32 +570,24 @@
                         <!--<label class="uk-link" onclick="wfe.app.changeTheme('amazfit');" data-translate-id="themeAmazfit">Amazfit</label>-->
                     </div>
                 </div>
-                <div class="uk-margin-top"><input id="showdemocheck" class="uk-checkbox" type="checkbox" checked> <span data-translate-id="showdemo">Show demo</span></div>
+                <div class="uk-margin-top"><input id="showdemocheck" class="uk-checkbox" type="checkbox" checked> <span
+                        data-translate-id="showdemo">Show demo</span></div>
                 <div class="uk-margin-top">
                     <span>Language</span>
                     <div class="uk-grid-small uk-child-width-auto uk-grid">
-                        <label class="uk-link" id="lang-ru">Русский</label>
-                        <label class="uk-link" id="lang-en">English</label>
                         <label class="uk-link" id="lang-zh">中文</label>
+                        <label class="uk-link" id="lang-cs">Česky</label>
                         <label class="uk-link" id="lang-de">Deutsch</label>
                         <label class="uk-link" id="lang-nl">Dutch</label>
+                        <label class="uk-link" id="lang-en">English</label>
+                        <label class="uk-link" id="lang-pt">Portuguese</label>
+                        <label class="uk-link" id="lang-ru">Русский</label>
                         <label class="uk-link" id="lang-tr">Turkish</label>
-                        <label class="uk-link" id="lang-cs">Česky</label>
                     </div>
                 </div>
                 <p class="uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button" data-translate-id="close">Close</button>
-                </p>
-            </div>
-        </div>
-        <div id="modal-donate" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <h2 class="uk-modal-title" data-translate-id="donate">Donate</h2>
-                <div id="donateframe" class="uk-container"></div>
-                <p class="uk-text-center">Yandex.Money: <b>41001928688597</b></p>
-                <p class="uk-text-center">PayPal: <b>kirilkin12@gmail.com</b></p>
-                <p class="uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button" data-translate-id="close">Close</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button"
+                        data-translate-id="close">Close</button>
                 </p>
             </div>
         </div>
@@ -505,18 +605,15 @@
                 <h2 class="uk-modal-title" data-translate-id="realsizePreview">Real-size preview</h2>
                 <div id="realsizePreview" class="uk-container"></div>
                 <p class="uk-text-right">
-                    <button class="uk-button uk-button-primary uk-modal-close" type="button" data-translate-id="close">Close</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" type="button"
+                        data-translate-id="close">Close</button>
                 </p>
             </div>
         </div>
     </main>
-    <footer>
-        <p class="uk-text-center uk-text-meta" style="margin-bottom: 0">designed by vlack <span style="margin-left: 10px" data-translate-id="translatedby"></span><span style="margin-left: 10px"></span>Github: <a href="https://github.com/v1ack/watchfaceEditor" target="_blank">v1ack</a><span style="margin-left: 10px"></span>Telegram:
-            <a href="https://t.me/vlack" target="_blank">@vlack</a><span style="margin-left: 10px"></span><a href="#modal-donate" uk-toggle style="color: #2CB3FC" data-translate-id="donate" id="donate-link">donate</a></p>
-    </footer>
     <script src="assets/uikit/uikit.min.js"></script>
     <script src="dist/bundle.js"></script>
-    
+
 </body>
 
 </html>

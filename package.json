@@ -1,34 +1,36 @@
 {
-  "name": "watchfaceeditor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "electron/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
-    "watch": "webpack --watch",
-    "dev": "webpack -w",
-    "build-electron": "electron-packager  . --asar"
-  },
   "author": "vlack",
-  "license": "ISC",
+  "name": "watchfaceeditor",
   "dependencies": {
     "react": "^16.9.0"
   },
+  "description": "",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
+    "electron": "^7.1.5",
     "electron-packager": "^14.1.1",
+    "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.14.3",
     "html2canvas": "^1.0.0-rc.3",
     "jsonlint-mod": "^1.7.5",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
     "webpack": "^4.39.0",
-    "webpack-cli": "^3.3.6",
-    "electron": "^7.1.5"
-  }
+    "webpack-cli": "^3.3.6"
+  },
+  "license": "ISC",
+  "main": "electron/main.js",
+  "scripts": {
+    "build": "webpack -p",
+    "build-electron": "electron-packager  . --asar",
+    "dev": "webpack -w",
+    "lint": "eslint {dev,electron,js}/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "version": "1.0.0"
 }
