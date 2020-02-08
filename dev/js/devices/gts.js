@@ -218,7 +218,7 @@ let wf_data = {
 let device = {
   height: 442,
   width: 348,
-  editor_zoom: 1.5,
+  editor_zoom: 1.517241379310345,
   preview_zoom: 0.5,
   tabs: ['editor-tab', 'jsonEditor-tab', 'analog-watch-tab', 'resources-tab'],
   images: {
