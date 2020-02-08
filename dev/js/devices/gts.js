@@ -208,7 +208,7 @@ let device = {
   width: 348,
   editor_zoom: 1,
   preview_zoom: 0.5,
-  tabs: ['editor-tab', 'jsonEditor-tab', 'resources-tab'],
+  tabs: ['editor-tab', 'jsonEditor-tab', 'analog-watch-tab', 'resources-tab'],
   images: {
     watchface_block: {
       left: 66,
